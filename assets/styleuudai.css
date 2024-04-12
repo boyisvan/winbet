@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header1{
+    display: flex;
+    justify-content: space-between;
+    background-color: #0b4a80;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+.logogame{
+    width: 50px;;
+}
+.name{
+    width: calc(100% - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+.arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.arrow a i{
+    font-size: 20px;
+    color: white;
+}
+
+/* phan noi dung  */
+.contentuudai{
+    padding: 50px 50px;
+    z-index: -1;
+}
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    /* z-index: -1; */
+    z-index: 1;
+}
+
+.tablinks{
+    width: 25%;
+    z-index: 1;
+}
+
+.tablink1{
+    width: 50%;
+    z-index: 1;
+}
+
+.tab button {
+    font-size: 26px;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #dddddd;
+}
+
+.tab button.active {
+    color:rgb(9, 144, 99) ;
+    border-bottom: 2px solid rgb(9, 144, 99) ;
+}
+
+.tabcontent {
+    display: none;
+    padding: 60px 12px;
+    /* border: 1px solid #ccc; */
+    border-top: none;
+    width: 100%;
+}
+.tabcontent img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+@media (min-width:250px) and (max-width:800px) {
+    .contentuudai{
+        padding: 50px 10px;
+    }
+    .tab{
+        width: 100%;
+    }
+    .tab button{
+        padding: 10px 4px;
+        font-size: 16px;
+    }
+    .tabcontent{
+        padding: 50px 0px;
+    }
+    .titlenoti{
+        font-size: 13px;
+    }
+}
+
+
+.tablinksthongbao{
+    width: 50%;
+    z-index: 2;
+}
+.tabcontentthongbao{
+    display: none;
+    padding: 60px 12px;
+    /* border: 1px solid #ccc; */
+    border-top: none;
+    width: 100%;
+    z-index: -1;
+}
+.warnoti{
+    color: #4c8ac1;
+}
+.titlenoti{
+    margin-left: 6px;
+}
+
+.nameprofile{
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+}

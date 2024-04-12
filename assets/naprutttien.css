@@ -1,0 +1,191 @@
+header{
+    width: 100%;
+    display: flex;justify-content: center;
+    align-items: center;
+    color: #0a4b81;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px;
+}
+.contentnaprut{
+    position: absolute;
+    width: 100%;
+    margin-top: 70px;
+    padding: 0 10px 120px 10px;
+    z-index: -1;
+}
+.socuoi {
+    /* margin-left: -50px; */
+    font-size: 17px;
+    flex-basis: 50%;
+}
+.nganhanglogo{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.namenganhang{
+    background-color: white;
+    border: 1px solid #0a4b81;
+}
+.namenganhang img{
+    width: 60px;
+    height: 30px;
+}
+.namenganhangselect{
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+.namenganhangselect img{
+    width: 60px;
+    height: 40px;
+}
+
+.themnganhang{
+    padding: 7px;
+}
+.datat{
+    width: 100%;
+    padding: 30px 10px;
+}
+.r{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+.namer{
+    width: 25%;
+    font-size: 19px;
+    margin-top: 5px;
+}
+.enterdata{
+    width: 75%;
+}
+.enterdata1{
+    width: 75%;
+    margin-bottom: 50px;
+}
+.enterdata a{
+    text-decoration: none;
+    position: absolute;
+    right: 15px;
+}
+.enterdata input{
+    padding: 10px;
+}
+.r4 button{
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+}
+.notiruttien{
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+}
+.headn{
+    text-align: center;
+    border-bottom: 0.5px solid rgb(204, 202, 202);
+    padding-bottom: 20px;
+}
+
+.qrcodenganhang img{
+    width: 100px;
+}
+.qrcodenganhang img:nth-child(1){
+    margin-right: 20px;
+}
+.inn{
+    margin-right: 10px;
+    font-size: 17px;
+}
+.inn:nth-child(1){
+    color: #0b4a80;
+}
+.nnbold{
+    font-weight: bold;
+    display: inline-block;
+}
+.ndck{
+    color: orange;
+    font-weight: bold;
+}
+/* khung nạp  */
+/* .datat{
+    width: 110%;
+    margin-left: -20px;
+} */
+.r1{
+    width: 100%;
+    border: 1px solid rgb(103, 102, 102);
+    border-left: none;
+    border-right: none;
+    padding: 5px 10px;
+}
+.enterdata input{
+    border: none;
+}
+
+/* code bàn phim */
+.number-btn,#clear-btn{
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid rgb(98, 98, 248);
+    width: calc(100% /6);
+    outline: none;
+    margin-left: -4px;
+    background-color: white;
+    padding: 7px;
+    color: #0a4b81;
+    font-family:  Arial, Helvetica, sans-serif;
+    
+}
+.number-btn:nth-child(1),.number-btn:nth-child(2),
+.number-btn:nth-child(3),.number-btn:nth-child(4),.number-btn:nth-child(5),
+#clear-btn  
+{
+    border-bottom: none;
+}
+.number-btn:nth-child(11){
+    width:calc(100% /3);
+}
+.number-btn:nth-child(1){
+    border-top-left-radius:10px ;
+}
+.number-btn:nth-child(7){
+    border-bottom-left-radius:10px ;
+}
+.number-btn:nth-child(11){
+    border-bottom-right-radius:10px ;
+    width: calc(100% /3 + 1px);
+}
+#clear-btn{
+    border-top-right-radius:10px ;
+    margin-left: 3,5px;
+     width: calc(100% /6 + 2px);
+}
+.keyboard1{
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+
+
+
+
+
+
+
+@media (min-width:250px ) and (max-width:500px) {
+    .namer{
+        font-size: 13px;
+    }
+    .socuoi{
+       font-size: 12px;
+    }
+}

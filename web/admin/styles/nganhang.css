@@ -1,0 +1,66 @@
+.logonganhang{
+    max-width: 50px;
+    max-height: 70px;
+    background-size: cover;
+    align-items: center;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.editBankBtn{
+    padding: 5px 8px;
+    background-color: rgb(220, 217, 212);
+    color: rgb(107, 107, 107);
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 10px;
+}
+.chonnganhang{
+    max-width: 50px;
+    max-height: 70px;
+}
+
+.btnthemnganhang{
+    background-color: cornflowerblue;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btnthemnganhang:hover{
+    background-color: rgb(80, 135, 235);
+}
+
+.themnganhang{
+    background-color: var(--color-white);
+    padding: 10px;
+    border-radius: 10px 15px;
+}
+#saveBankChanges ,#deleteBank{
+    padding: 5px 10px;
+    border-radius: 7px;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: rgb(26, 188, 134);
+}
+#deleteBank{
+    background-color: rgb(228, 120, 120);
+}
+#bankPopup{
+    border-radius: 15px;
+    /* width: 350px; */
+}
+#closeBankPopup{
+    padding: 7px 10px;
+    margin-top: 15px;
+    border-radius: 7px;
+}
+
+@media (max-width:700px) {
+     #bankPopup{
+        width: 85%;
+        border-radius: 10px;
+    }
+    
+}

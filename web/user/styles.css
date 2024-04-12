@@ -1,0 +1,1425 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto+Slab:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.logogame img{
+    width: 120px;
+}
+/* phần chọn hover selet  */
+.nav-btn:hover{
+    border: 1px solid rgb(69, 91, 216);
+}
+/* Ẩn ảnh thứ hai ban đầu */
+.nav-btn .image2 {
+    display: none;
+    max-width: 40px;
+}
+
+/* Hiển thị ảnh thứ hai và chuyển động khi hover */
+.nav-btn:hover .image1,
+.nav-btn.active .image1 {
+    display: none;
+}
+
+.nav-btn:hover .image2,
+.nav-btn.active .image2 {
+    display: block;
+    animation: slideUpDown 0.5s ease alternate infinite;
+}
+
+@keyframes slideUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+
+.namehl{
+    font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  text-shadow: 5px 5px 12px #dea1a1;
+}
+/* css header */
+.header{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    box-shadow: 0 0 10px 5px rgba(237, 235, 235, 0.7);
+    z-index: 10;
+    user-select: none;
+}
+
+.inforuser{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
+    font-size: 18px;
+}
+.sodu{
+cursor: pointer;
+}
+
+
+/* Style cho popup */
+.popup {
+    z-index: 1;
+  display: none;
+  position: absolute;
+    background-color:white;
+  width: 300px;
+  padding: 20px 0px 0 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  right: 10px;
+  top: 60px;
+  animation: slide-down 1s ease forwards;
+  overflow: hidden;
+}
+
+.popup.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.chuyentien{
+    background-color: rgb(76, 84, 75);
+    width: 100%;
+    padding: 0;
+}
+.popup-content h4{
+    padding: 0px 20px;
+}
+.cktkg{
+    border-radius: 50%;
+    width: 100%;
+    color: white;
+}
+
+.thongtintien{
+    padding: 0 30px;
+}
+.close-btn{
+    font-size: 25px;
+}
+
+/* hiệu ứng thông báo chuông  */
+.notification-icon {
+  position: relative;
+  animation: shake 1s ease-in infinite;
+}
+
+.notification-icon .fa-regular.fa-bell {
+  color: black; /* Màu biểu tượng chuông */
+  /* font-size: 24px; Kích thước biểu tượng chuông */
+}
+
+.notification-icon::after {
+  content: ""; /* Số lượng thông báo */
+  position: absolute;
+  top: 0px; /* Điều chỉnh vị trí badge */
+  right: -2px; /* Điều chỉnh vị trí badge */
+  background-color: red; /* Màu badge */
+  color: white; /* Màu chữ trong badge */
+  border-radius: 50%; /* Hình dạng badge hình tròn */
+  width: 10px; 
+  height: 10px; 
+  /* font-size: 14px; */
+  display: flex; /* Hiển thị badge là một khối linh hoạt */
+  justify-content: center; /* Canh giữa nội dung của badge */
+  align-items: center; /* Canh giữa nội dung của badge */
+  animation: shake1 0.5s infinite ;
+}
+.i-down{
+    animation: down 2s infinite ;
+}
+
+@keyframes shake1 {
+  from {
+    transform: scale(1.1,1.1);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+@keyframes down {
+  from {
+    transform:translate(0,2px) ;
+  }
+  to {
+    transform: translate(0,0px) ;
+    transform: scale(0.9,0.9);
+    color: rgb(94, 95, 57);
+  }
+}
+
+/* ----------------------------------------------------------------phần body------ */
+.bodycontent{
+    width: 100%;
+    height: 200vh;
+    padding:50px 0px 65px 0px;
+    background-color:aliceblue;
+    /* overflow: hidden; */
+}
+
+/* phần chuyển ảnh */
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 80vh; /* Thay đổi chiều cao tự động thích ứng */
+    z-index: 1;
+}
+
+.maincontent{
+    display: flex;
+    padding-top: 10px;
+    z-index: 2;
+    box-shadow: 0 10px 10px 25px  rgba(239, 242, 237, 0.7);
+}
+.selectList{
+    width: 25%;
+    left: 0;
+    bottom: 0;
+}
+.ListGame{
+    right: 0;
+    width: 75%;
+    height: 95vh;
+    padding: 10px;
+    display: flex;
+}
+
+#hotContent{
+    width: 100%;
+}
+#livecasinoContent{
+    width: 100%;
+}
+#thethaoContent{
+    width: 100%;
+}
+#xosoContent{
+    width: 100%;
+    padding: 0 5px 0 0 ;
+ 
+}
+#doikhangContent{
+    padding: 0 5px 0 0 ;
+    width: 100%;
+
+}
+#gameContent{
+    width: 100%;
+    padding: 0 5px 0 0 ;
+}
+#bancaContent{
+    width: 100%;
+}
+#esportsContent{
+    padding: 0 5px 0 0 ;
+    width: 100%;
+}
+
+
+
+
+
+
+.hc1{
+    /* background-image: url('/image/image_game/hot/hotbg1.jpg'); */
+   background: rgb(219,233,242);
+background: radial-gradient(circle, rgba(219,233,242,1) 0%, rgba(198,214,233,1) 100%);
+}
+
+.hcl1{
+    /* background-image: url('/image/image_game/img_liveKUBG.png');
+     */
+     background-color: #bdd9f0;
+}
+.hcl2{
+    background-color: #bdd9f0;
+}
+.bannerdoikhang1{
+background-image: url('/image/banner/bndk1.jpg');
+}
+.bannerdoikhang2{
+background-image: url('/image/banner/bndk2.jpg');
+}
+.game3d1{
+    background-image: url('/image/banner/bannergame3d01.jpg');
+}
+.game3d2{
+    background-image: url('/image/banner/bannergame3d02.jpg');
+}
+.xocdia{
+    background-image: url('/image/image_game/livecasino/bgxocdia.jpg');
+}
+.taixiu{
+    background-image: url('/image/image_game/livecasino/bgtaixiu.jpg');
+}
+.baucua{
+    background-image: url('/image/image_game/livecasino/bgbaucua.jpg');
+}
+.rongho{
+    background-image: url('/image/image_game/livecasino/bgrongho.jpg');
+}
+.topxocdia img{
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 30px;
+}
+
+
+.esportbg1{
+    background-image: url('/image/image_game/esports/es01.jpg');
+}
+.esportbg2{
+    background-image: url('/image/image_game/esports/es02.jpg');
+}
+
+
+
+.hcbc{
+    background-image: url('/image/image_game/img_sportHotBG.png');
+}
+
+.hc2{
+    background-color: #bdd9f0;
+}
+.hc3{
+    background-color: #bdd9f0;
+    /* background-image: url('/image/image_game/img_sportHotBG.png'); */
+}
+.hc4{
+    background-color: #bdd9f0;
+    /* background-image: url('/image/image_game/img_sportHotBG.png'); */
+}
+.hc5{
+    background-color: #bdd9f0;
+    /* background-image: url('/image/image_game/img_hotBG.png'); */
+}
+
+
+.hc62{
+    margin-top: 10px;
+}
+
+.hcl{
+    position: relative;
+    padding: 15px;
+    width:  calc(50% - 10px);
+    height: calc(100% / 5  - 10px);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    float: left;
+    overflow: hidden;
+}
+.hcllivecasino{
+    width:  calc(50% - 10px);
+    height: calc(100% / 5  - 10px);
+}
+.hcllivecasino1{
+    padding: 0;
+    width:  calc(100% - 10px);
+    height: calc(100% / 5  - 10px);
+    /* background-image: url('/image/banner/bannerlivecasino2.jpg'); */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    object-fit: cover; 
+}
+.hcllivecasino1 img{
+    width: 100%;
+    height: 100%;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    object-fit: cover; 
+    /* padding: 5px; */
+}
+.hcltt{padding: 0;}
+.hcltt img{
+    width: 100%;
+    height: 100%;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    object-fit: cover; 
+}
+.hcllivecasino1 img.bncsn{
+    opacity: 1;
+}
+
+
+
+.hc1h{
+    width:  calc(50% - 10px);
+    height: calc(100% / 3  - 10px);
+}
+.hcx{
+    position: relative;
+    padding: 15px;
+    width:  calc(100%);
+    height: calc(100% / 2  - 10px);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    border-radius: 10px;
+    margin-bottom: 10px;
+    float: left;
+    overflow: hidden;
+}
+.hcxx{
+    position: relative;
+    padding: 15px;
+    width:  calc(100%);
+    height: calc(100% / 3  - 10px);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    border-radius: 15px;
+    margin-bottom: 10px;
+    float: left;
+    overflow: hidden;
+}
+.hcl1{
+    width: calc(100% - 10px);
+}
+.tophcl1 img{
+    width: 13%;
+    height: 100%;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: shake 1s ease-in infinite;
+}
+.bothc1 .hcl1img1{
+    height: 80px;
+    width: 80px;
+}
+.hcltt{
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+.tophcl1 p{
+    /* text-shadow: 2px 5px 5px #4e58e4; */
+    color: #262b76;
+    font-weight: bold;
+}
+.bothcx1 img{
+    width: 130px;
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.bothcx2 img{
+    width: 80px;
+    height: 80%;
+}
+.hc{
+    position: relative;
+    padding: 15px;
+    width:  calc(50% - 10px);
+    height: calc(100% / 3  - 10px);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    float: left;
+    overflow: hidden;
+}
+
+.hc{
+    flex-basis: 45%;
+}
+.hc6{
+    padding: 0;
+}
+.hc61,.hc62{
+    background-image: url('/image/image_game/img_hotBG.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px; 
+    height: 50%;
+    /* width: 100%; */
+    padding: 5px  15px;
+    /* margin-top: -15px; */
+}
+.hc61 .tophc6 img{
+    animation: dap 1s ease infinite;
+}
+.hc62 .tophc6 img{
+    animation: dap 1s ease infinite;
+}
+
+.hc1mg2{
+    animation: dap 1s ease-in infinite;
+}
+
+@keyframes dap {
+    0%{
+        transform: scale(1,1);
+    }
+    50%{
+        transform: scale(1.2,1.2);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+.hc p{
+    font-weight: bold;
+    color: #3e3f41;
+    font-size: 19px;
+}
+.hc img{
+    width:50px;
+}
+
+.hc6 p{
+    font-size: 16px;
+    margin: 0 auto; 
+}
+.tophc6{
+    position: relative;
+    justify-content: space-between;
+}
+
+
+.bothc1 img{
+    width: 175px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.bothc11 img{
+    width: 130px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.bothc1 img:nth-child(2){
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.bothcl1 img{
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.tophc6 p{
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+.imghc6{
+    width: 150px;
+    float: right;
+}
+
+.iconhot{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 0px;
+}
+
+.bothce1 img{
+    width: 340px;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.tophcx1 img{
+    width: 100px;
+    margin-top: 20px;
+    animation: dap 1s ease-in infinite;
+}
+.tophcx12 img{
+    margin-top: ̀20px;
+    animation: dap 1s ease-in infinite;
+    width: 60px;
+}
+
+.doikhangtop p{
+    color: white;
+    font-size: 35px;
+    text-shadow: 5px 10px 25px #3f3f4a;
+    font-weight: bold;
+}
+.tophcx1 p{
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(160, 130, 31);
+}
+
+.tophcx1 i{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color : rgb(151, 66, 151);
+}
+
+
+.topgame1 p{
+    color:white ;
+    text-shadow: 5px 10px 15px rgb(127, 111, 111);
+    font-size: 30px;
+}
+.eslogo img{
+    position: absolute;
+    top: 0;
+    left: 4px;
+    width: 20%;
+}
+
+/* phần chọn mục chơi  */
+.nav-btn{
+    background-color: #e1eefd;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+    height: calc(100% / 8 - 10px);
+    margin-top: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.nav-btn img{
+    max-width: 25px;
+    margin-top: 25px;
+    /* box-shadow: 0px 10px 10px rgb(161, 160, 160); */
+}
+.nav-btn p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    /* margin-bottom: -5px; */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.active {
+    opacity: 1;
+}
+
+.slide a{
+    text-decoration: none;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*----------------------------------------------------------- footer --------------*/
+.footer{
+    z-index: 100;
+    width: 100%;
+    height: 11%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    border-top:0.1px solid rgb(228, 224, 224) ;
+    /* box-shadow: 0 -20px 20px  rgba(220, 215, 215, 0.7); */
+    background-color: white;
+}
+.ft{
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ct{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    margin-top: -5px;
+}
+.ct p{
+    font-size: 15px;
+}
+.uudai .ct img{
+    width: 75px;
+    animation: shake 1s ease infinite;
+}
+
+.hotro .ct img{
+    max-height: 35px;
+    max-width: 35px;
+}
+.hotro .ct p{
+    margin-top: 7px;
+}
+
+.giaodich .ct img{
+    width: 25px;
+}
+.toi     .ct img{
+    width: 25px;
+}
+.napruttien .ct img{
+    width: 65px;
+}
+.napruttien{
+    margin-bottom: 30px;
+}
+
+
+
+
+.hotro .ctht img {
+    animation: shake 1s ease infinite;
+}
+
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    /* 75% { transform: rotate(3deg); } */
+    100% { transform: rotate(0deg); }
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* phần nạp rút tiền  */
+
+.optionsDiv {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    top: 100%; 
+    background-color: #fffdfd;
+    transition: top 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+.optionsDiv.show {
+    top: calc(100% - 200px); /* Di chuyển lên vị trí cách đó 40px từ phía dưới footer */
+}
+.optionsDiv  button a{
+    text-decoration: none;
+    color: #399fda;
+}
+.aob{
+    width: 48%;
+    padding: 5px;
+}
+.ob img{
+    width: 40px;
+    height: 40px;
+}
+.ob{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    height: 80px;
+}
+
+.titlePc{
+    color: #399fda;
+}
+.titlePc a{
+   text-decoration: none;
+   color: black;
+}
+
+/* key frame chỉnh phần banner khớp  */
+
+@media (min-width:250px) and (max-width:800px){
+    .header{
+        height: 10px;
+    }
+    .bodycontent{
+        height: 100vh;
+           /* position: fixed; */
+    }
+    .banner{
+        height: 20%;
+    }
+    .maincontent{
+        height: 80%;
+        overflow: hidden;
+        padding-top: 5px;
+    }
+    .ListGame{
+        height: 100%;
+    }
+    .nav-btn p{
+        font-size: 8px;
+        color:#535867;
+    }
+    .hc p{
+        font-size: 15px;
+    }
+    .hc{
+        height: calc(100% /3 - 10px);
+    }
+    .hc img{
+        width: 30px;
+    }
+    .bothc1 img{
+        width: 100px;
+    }
+    .bothc11{
+        width: 110px;
+    }
+    .tophc1 p{
+        font-size: 13px;
+    } 
+    .tophc1 img{
+        width: 50px;
+        margin-top: -10px;
+    }
+    .tophcl1 p{
+        font-size: 12px;
+    } 
+    .tophc6 p{
+        font-size: 8px;
+        top: 10px;
+        width: 55px;
+    }
+    .nav-btn img{
+        max-width: 20px;
+    }
+    .imghc6{
+        min-width:40px;
+        position: absolute;
+        right: 0px;
+        top: 10px;
+    }
+    .optionsDiv.show {
+        top: calc(100% - 150px); /* Di chuyển lên vị trí cách đó 40px từ phía dưới footer */
+    }
+    .optionsDiv {
+        height: 80px;
+        padding: 10px;
+    }
+    .ob{
+        height: 50px;
+    }
+    .tophcl1 img{
+        height: 30%;
+        width: 30%;
+        margin-top: -20px;
+    }
+    .bothcl1 img{
+        width: 50px;
+    }
+    .hac1immgb{
+        width: 20%;
+    }
+    .bothcx1 img{
+        width: 120px;
+    }
+    .bothce1 img{
+        width: 170px;
+        height: 60%;
+    }
+
+    .nav-btn .image1 {
+        max-width: 20px;
+    }
+    .nav-btn .image2 {
+        margin-top: -5px;
+        max-width: 30px;
+        box-shadow: 10px 10px 20p black;
+    }
+    .selectList{
+        padding: 0 5px;
+    }
+    .ListGame{
+        width: 80%;
+        padding: 0;
+    }
+    .hc{
+        width:  calc(50% - 10px);
+        height: calc(100% / 3  - 5px);
+        margin-left: 5px; 
+        margin-bottom: 10px;
+    }
+
+    .hc1h{
+        width:  calc(100% - 10px);
+        height: calc(100% / 3  - 10px);
+        margin-left: 5px; 
+        margin-bottom: 10px;
+    }
+    .bothc1 img{
+        /* margin-right: 30px; */
+        width: 165px;
+        height:165px;
+    }
+
+    .bothc1 img:nth-child(2){
+        margin-right: 0;
+    }
+    .iconhot{
+        position: absolute;
+        margin-left: 30px;
+    }
+
+    .bothc2 img{
+        width: 90px;
+        height:120px;
+    }
+    .nav-btn{
+        height: calc(100% / 8 - 5px);
+        margin-top: 5px;
+        width: 100%;
+        cursor: pointer;
+    }
+    .nav-btn p{
+        font-size: 12px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+}
+@media (min-width:700px) and (max-width:1500px){
+    .bodycontent{
+        height: 120vh;
+    }
+    .banner{
+        height: 30%;
+        bottom: 10px;
+    }
+    .maincontent{
+        height: 60vh;
+    }
+    .topxocdia img{
+        width: 20%;
+        height: 40%;
+    }
+}
+
+/* chỉnh phần footer  */
+@media (min-width:250px) and (max-width:500px) {
+
+    .footer{
+        height: 8%;
+    }
+    .ct p{
+        font-size: 12px;
+    }
+    .uudai .ct img{
+        width: 65px;
+        margin-top: 15px;
+    }   
+    .uudai{
+        margin-bottom: 6px;
+    }
+    .hotro .ct img{
+        max-height: 30px;
+        max-width: 30px;
+        margin-top: 10px;
+    }
+    .napruttien .ct img{
+        width:50px;
+        /* padding-bottom: 5px; */
+        margin-top: 30px;
+    }
+    .napruttien{
+        margin-bottom: 30px;
+    }
+    .giaodich .ct img{
+        width: 20px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    .hotro{
+        margin-top: 5px;
+    }
+    .giaodich,.toi{
+        margin-top: 10px;
+    }
+    .toi   .ct img{
+        width: 25px;
+        margin-top: 15px;
+    }
+    .tophc6 p{
+        width: 50%;
+        font-size: 16px;
+    }
+    .selectList{
+        width: 20%;
+    }
+    .bothc1 img{
+        margin-right: 10px;
+        width: 155px;
+        height:155px;
+    }
+}
+
+
+
+@media (min-width:500px) and (max-width:1000px) {
+    .footer{
+        height: 9%;
+    }
+    .napruttien .ct img{
+        width: 65px;
+        padding-bottom: 5px;
+    }
+    .napruttien{
+        margin-bottom: 40px;
+    }
+    .giaodich,.toi{
+        margin-top: 10px;
+    }
+
+}
+
+
+/* ------------------------------------fix giao diện ipad  */
+@media (min-width:500px ) and (max-width:800px) {
+    .optionsDiv.show {
+        top: calc(100% - 180px); /* Di chuyển lên vị trí cách đó 40px từ phía dưới footer */
+    }
+    .optionsDiv {
+        height: 150px;
+        padding: 10px;
+    }
+    .ob{
+        height: 50px;
+    }
+    .bothc1 img{
+        margin-right: 30px;
+        width: 100px;
+        height:110px;
+    }
+
+    .hcl21{
+        width:  calc(50% - 10px);
+        height: calc(20% - 10px); 
+        padding-bottom: 30px;
+    }
+    /*--------------- thay ảnh ngang banner live casino ở giao diện ipad */
+    /* .xocdia{
+        background-image: ;
+    } */
+    /* .baucua{
+        background-image: ;
+    } */
+    /* .rongho{
+        background-image: ;
+    } */
+    /* .taixiu{
+        background-image: ;
+    } */
+}
+
+
+@media (min-width:200px) and (max-width:376px){
+    .nav-btn .image1 {
+        max-width: 20px;
+    }
+    .nav-btn .image2 {
+        margin-top: 0px;
+        max-width: 20px;
+    }
+    .nav-btn p{
+        font-size: 9px;
+    }
+    .bothc1 img{
+        margin-right: 10px;
+        width: 115px;
+        height:115px;
+    }
+}
+
+
+
+/* css header */
+.header{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    /* box-shadow: 0 0 20px 25px rgba(237, 235, 235, 0.7); */
+    z-index: 10;
+}
+
+
+.dangki{
+    background-color: #ffa84d;
+    padding:0 5px;
+    margin-right: 50px;
+}
+.dangnhap{
+    background-color: #399fda;
+}
+.dangki,.dangnhap{
+    outline: none;
+    border: none;
+    padding: 0px 7px 0 0px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.dangki:hover{
+    background-color: #ffc07d;
+}
+.dangnhap:hover {
+    background-color: #85b7fc; /* Đổi màu nền khi hover */
+}
+.dangki,.dangnhap span{
+    color: white;
+    font-size: 16px;
+    margin-left: 5px;
+}
+.dangki i,.dangnhap i{
+    /* overflow: hidden; */
+    padding: 0;
+    margin-left: -10px;
+}
+.dangki{
+    margin-right: 10px;
+}
+.xacthuc button i{
+    color: white;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+
+.icon i{
+   margin: 0 auto;
+   font-size: 25px;
+   color: #399fda;
+}
+
+.ic{
+    display: flex;justify-self: center;
+    align-items: center;
+}
+.ic i{
+    color: rgb(48, 131, 104);
+    margin-top: 10px;
+}
+.dangki{
+    background-color: #ffa84d;
+}
+
+
+
+
+/* phần css form đăng nhập  */
+
+.itemmodal1{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.itemmodal1 a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.itemmodal1 a button{
+    width: 80%;
+}
+.contentmodel{
+    width: 100%;
+    padding: 10px;
+}
+.itemmodal{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+.itemmodal i{
+    font-size: 20px;
+    width: 20%;
+    margin-right: 10px;
+    color: rgb(116, 163, 230);
+    text-align: center;
+}
+.itemmodal input{
+    padding: 15px;
+    border: none;
+}
+.btnitem{
+    background-color: rgb(238, 177, 62);
+    height: 38px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+}
+.headermodal{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background-color: rgb(210, 208, 208);
+    margin-bottom: 10px;
+}
+.headermodal p{
+    margin-left: 15px;
+    text-align: center;
+    margin-top: 10px;
+    text-align: center;
+    width: 95%;
+    font-weight: bold;
+    font-size: 25px;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Lớp phủ đen */
+    z-index: 1000;
+}
+
+.modal1 {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40%;
+    height: auto;
+    background-color: #fff;
+    z-index: 1001;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.modal-content {
+    border-radius: 15px;
+    width: 100%;
+    /* margin-bottom: 50px; */
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-right: 15px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.quenmatkhau{
+    margin-top: -20px;
+    margin-bottom: 10px;
+    float: right;
+}
+.quenmatkhau a{
+    text-decoration: none;
+}
+ @media (min-width:250px) and (max-width:500px){
+    .modal1 {
+        width: 90%;
+    }
+    .tophc1 img:nth-child(6){
+        width: 80px;
+        height: 80px;
+        margin-top: -45px;
+    }
+}
+
+/* chỉnh title game hot  */
+.nametitlegame1,.nametitlegame2{
+    display: block;
+    color : rgb(151, 66, 151);
+
+}
+.nametitlegame1{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    margin-top: 15px;
+    /* text-shadow: 1px 8px 10px rgb(209, 42, 209); */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.nametitlegame2{
+     font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+    letter-spacing: 1.3px;
+}
+.tophc1 img:nth-child(6){
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    bottom: -25%;
+    left: 0;
+}
+
+@media (min-width:700px) and (max-width:800px){
+    .tophc1 img:nth-child(6){
+        left: 20%;
+    }
+} 
+@media (min-width:800px) and (max-width:1200px){
+    .tophc1 img:nth-child(6){
+        bottom: -10%;
+    }
+} 
+@media (min-width:200px) and (max-width:700px){
+    .tophc1 img:nth-child(6){
+        bottom: -25%;
+    }
+} 
+
+
+
+.namer{
+    margin-top: -90px;
+}
+.keyboard {
+    margin-top: 20px;
+}
+
+.keyboard button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 3px;
+}
+
+
+
+
+
+@media (max-width:600px) {
+    .header{
+        height: 33px;
+    }
+    .bodycontent{
+        padding:33px 0px 65px 0px;
+        background-color:aliceblue;
+        /* overflow: hidden; */
+    }
+}
+
+
+
+
+
+
+
+
+@media (min-width:1200px) and (max-width:4500px) {
+    .hcl21{
+        padding: 0;
+        width:  calc(100% - 10px);
+        height: calc(100% - 10px); 
+    }
+    .hcllivecasino1{
+        width:  calc(100% - 10px);
+    }
+    .topxocdia img{
+        width: 10%;
+        height: 40%;
+    }
+}

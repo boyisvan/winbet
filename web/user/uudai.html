@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hỗ trợ</title>
+    <link rel="stylesheet" href="/web/user/styles.css">
+    <link rel="stylesheet" href="/assets/styleuudai.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body>
+    
+    <div class="header1">
+        <div class="arrow" >
+            <a href="index.html">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+        </div>
+        <div class="name">
+            ƯU ĐÃI
+        </div>
+    </div>
+
+
+    <div class="contentuudai">
+
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Tab1')">Tất cả</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab2')">Thành viên mới</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab3')">Thường nhật</button>
+            <button class="tablinks" onclick="openTab(event, 'Tab4')">Hoàn trả</button>
+        </div>
+
+        <div id="Tab1" class="tabcontent">
+            <div class="bnphoto">
+                <img src="/image/image_uudai/bn1.jpg" alt="">
+                <img src="/image/image_uudai/bn2.jpg" alt="">
+                <img src="/image/image_uudai/bn3.jpg" alt="">
+                <img src="/image/image_uudai/bn4.jpg" alt="">
+                <img src="/image/image_uudai/bn5.jpg" alt="">
+                <img src="/image/image_uudai/bn6.jpg" alt="">
+                <img src="/image/image_uudai/bn7.jpg" alt="">
+            </div>
+        </div>
+
+        <div id="Tab2" class="tabcontent">
+            <div class="bnphoto">
+                <img src="/image/image_uudai/bn6.jpg" alt="">
+                <img src="/image/image_uudai/bn2.jpg" alt="">
+            </div>
+        </div>
+
+        <div id="Tab3" class="tabcontent">
+            <img src="/image/image_uudai/bn1.jpg" alt="">
+            <img src="/image/image_uudai/bn3.jpg" alt="">
+            <img src="/image/image_uudai/bn7.jpg" alt="">
+        </div>
+        <div id="Tab4" class="tabcontent">
+            <img src="/image/image_uudai/bn5.jpg" alt="">
+            <img src="/image/image_uudai/bn7.jpg" alt="">
+        </div>
+    </div>
+
+    <!-------------------------------------------------------- phần điều hướng ------------------------>
+    <div class="footer">
+        <div class="uudai  ft">
+            <a class="ct" href="uudai.html">
+                <img src="/image/image_game/icon_footer_gift.png" alt="">
+                <p>Ưu đãi</p>
+            </a>
+        </div>
+        <div class="hotro ft" >
+            <a class="ct ctht" href="hotro.html">
+                <img src="/image/image_game/icon_footer_service.png" alt="">
+                <p>Hỗ trợ</p>
+            </a>
+        </div>
+        <div class="napruttien ft" id="showOptionsButton">
+            <a class="ct">
+                <img src="/image/image_game/icon_footer_DW.png  " alt="">
+                <p>Nạp rút tiền</p>
+            </a>
+        </div>
+        <div class="giaodich ft" >
+            <a class="ct" href="giaodich.html">
+                <img src="/image/image_game/icon_footer_tradeRec.png" alt="">
+                <p>Giao dịch</p>
+            </a>
+        </div>
+        <div class="toi ft">
+            <a class="ct" href="profile.html">
+                <img src="/image/image_game/icon_footer_member.png" alt="">
+                <p>Tôi</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- phần nạp rút tiền  -->
+
+    <!-- <div id="optionsDiv" class="optionsDiv"> -->
+        <!-- Nội dung của div này, chẳng hạn các tùy chọn người dùng có thể chọn -->
+        <!-- <a href="naptien.html" class="aob">
+            <button class="btn btn-success ob"><span>Nạp tiền</span></button>
+        </a>
+        <a href="chuyenquy.html" class="aob">
+            <button class="btn btn-primary ob"><span>Chuyển quỹ</span></button>
+        </a>
+        <a href="ruttien.html" class="aob">
+            <button class="btn btn-warning ob"><span>Rút tiền</span></button>
+        </a>
+    </div> -->
+
+    <!-- phần nạp rút tiền  -->
+
+    <div id="optionsDiv" class="optionsDiv">
+        <!-- Nội dung của div này, chẳng hạn các tùy chọn người dùng có thể chọn -->
+        <a href="naptien.html" class="aob">
+            <button class="btn btn-success ob">
+                <img src="/image/iconnap.png" alt="">
+                <span>NẠP TIỀN</span>
+            </button>
+        </a>
+        <!-- <a href="chuyenquy.html" class="aob">
+            <button class="btn btn-primary ob"><span>Chuyển quỹ</span></button>
+        </a> -->
+        <a href="ruttien.html" class="aob">
+            <button class="btn btn-warning ob">
+                <img src="/image/iconrut.png" alt="">
+                <span>RÚT TIỀN</span>
+            </button>
+        </a>
+    </div>
+
+</body>
+</html>
+
+<script src="/assets/scripts.js"></script>
+
+
+ <script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementsByClassName("tablinks")[0].click(); // Open the first tab by default
+</script>

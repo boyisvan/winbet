@@ -1,0 +1,99 @@
+
+.dangkicontent{
+    position: absolute;
+    width: 100%;
+    margin-top: 80px;
+    padding: 0 20px 120px 20px;
+    z-index: -1;
+}
+
+
+
+
+/* chuyển quỹ  */
+.itemcq{
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.itemcq p{
+    font-size: 18px;
+}
+.itemcq input{
+    border: none;
+    border-bottom: 1px solid rgb(202, 197, 197);
+}
+
+.itemcq span{
+    width: 70%;
+    margin-left: -5%;
+}
+.itemcq1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.itemcq1 button{
+    width: calc(50% - 10px );
+    margin-left: 10px;
+    height: 60px;
+}
+
+
+.itemcb{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-size: 17px;
+    border-bottom: 1px solid rgb(216, 214, 214);
+}
+.itemcb input{
+    width: 15%;
+    height: 15px;}
+.itemcb1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.itemcb1 button{
+    width: 45%;
+}
+
+.guima{
+    width: 100%;
+    display: flex;
+}
+.guima button{
+    width: 50%;
+}
+.cbdk{
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+.cbdk input{
+    display: inline;
+    width: 15%;
+}
+label{
+    display: inline;
+}
+.xndk button{
+    margin-top: 20px;
+    width: 100%;
+}
+.btn{
+    margin-left: 5px;
+}
+@media (min-width:250px) and (max-width:500px) {
+    .itemcq p{
+        font-size: 15px;
+    }
+    .cbdk{
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+}
+

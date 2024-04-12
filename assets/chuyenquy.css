@@ -1,0 +1,81 @@
+
+.contentchuyenquy{
+    position: absolute;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px 120px 20px;
+    z-index: -1;
+}
+.tablinks{
+    width: 33%;
+}
+
+
+
+
+
+/* chuyển quỹ  */
+.itemcq{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.itemcq p{
+    width: 25%;
+}
+
+.itemcq span{
+    width: 70%;
+    margin-left: -5%;
+}
+.itemcq1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.itemcq1 button{
+    width: calc(50% - 10px );
+    margin-left: 10px;
+    height: 60px;
+}
+.container{
+    width: 100%;
+}
+
+
+.itemcb{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-size: 17px;
+    border-bottom: 1px solid rgb(216, 214, 214);
+}
+.itemcb input{
+    width: 15%;
+    height: 15px;
+}
+.itemcb1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.itemcb1 button{
+    width: 45%;
+}
+
+
+.headcqtd{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+@media (min-width:250px) and (max-width:500px) {
+    .itemcq p{
+        width: 35%;
+        font-size: 12px;
+    }
+}

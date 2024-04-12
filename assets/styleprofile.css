@@ -1,0 +1,69 @@
+.profilecontent{
+    padding: 50px 20px;
+    width: 100%;
+}
+.pcfoot{
+    width: 100%;
+}
+.pcfoot button{
+    width: 100%;
+}
+.pchead{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+.pctem {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pctem img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.pcmoney{
+    color: red;
+    font-size: 24px;
+}
+
+.icon{
+    width: 14%;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(100, 100, 174);
+}
+
+@media (min-width:250px) and (max-width:500px) {
+    .pctem img{
+        height: 35px;
+        width: 35px;
+    }
+    .pctem p{
+        font-size: 13px;
+    }
+    .pcitem1 p{
+        font-size: 18px;
+        color: rgb(40, 50, 202);
+    }
+   .pcmoney{
+        font-size: 18px;
+    } 
+}
+
+
+
+/* giao dịch    */
+.sodu1{
+    width: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

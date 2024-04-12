@@ -1,0 +1,100 @@
+.contentquanlinganhang{
+    width: 100%;
+    padding: 60px 20px 0;
+    background-color: rgb(241, 244, 243);
+    height: 100vh;
+    
+}
+.contentquanlinganhang p{
+    color: red;
+    text-align: center;
+}
+.infonganhang{
+    /* height: 20%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(180,209,228);
+    background: radial-gradient(circle, rgb(213, 220, 224) 0%, rgb(170, 206, 250) 100%);
+    border-radius: 7px;
+    padding: 25px 10px;
+    width: 100%;
+    position: relative;
+}
+.infonganhang img{
+    width: 20%;
+}
+.infonganhang p{
+    font-size: 34px;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    color: white;
+    font-weight: bold;
+}
+.themnganhang{
+    margin-top: 20px;
+    width: 100%;
+    background-color: white;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    font-size: 20px;
+}
+.contentquanlinganhang a{
+    text-decoration: none;
+    color: black;
+}
+.themnganhang i{
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+.contentthemnganhang{
+    width: 100%;
+    padding: 60px 20px 0;
+    background-color: rgb(241, 244, 243);
+    height: 100vh;
+
+}
+.item1{
+    width: 100%;
+    margin-top: 10px;
+    /* border-bottom: 1px solid rgb(177, 170, 170); */
+}
+.item1 p{
+    margin-top: 10px;
+}
+.item1 input{
+    margin-top: -10px;
+    border: none;
+}
+.dataphone{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.dataphone button{
+    width: 100px;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+.xacnhan{
+    width: 100%;
+    padding: 7px;
+    margin-top: 10px;
+}
+@media (min-width:250px ) and (max-width :500px) {
+    .infonganhang p{
+        font-size: 14px;
+    }
+}

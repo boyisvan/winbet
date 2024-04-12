@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/web/admin/styles/user.css">
+    
+    <title>Trang admin </title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <!-- <img src="images/logo.png"> -->
+                    <h2>ADMIN<span class="danger">PAGE</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html" >
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Trang chủ</h3>
+                </a>
+                <a href="quanlinguoidung.html"  class="active">
+                    <span class="material-icons-sharp">
+                        person_outline
+                    </span>
+                    <h3>Quản lí người dùng</h3>
+                </a>
+                <a href="lichsugiaodich.html">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>Lịch sử giao dịch</h3>
+                </a>
+                <a href="quanlinganhang.html" class="">
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Quản lí ngân hàng</h3>
+                </a>
+                <a href="tinnhan.html">
+                    <span class="material-icons-sharp">
+                        mail_outline
+                    </span>
+                    <h3>Tin nhắn</h3>
+                    <!-- <span class="message-count">27</span> -->
+                </a>
+                <a href="thongbao.html">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+                    <h3>Thông báo</h3>
+                </a>
+                <a href="phanhoi.html">
+                    <span class="material-icons-sharp">
+                        report_gmailerrorred
+                    </span>
+                    <h3>Phản hồi</h3>
+                </a>
+                <a href="caidat.html">
+                    <span class="material-icons-sharp">
+                        settings
+                    </span>
+                    <h3>Cài đặt</h3>
+                </a>
+                <!-- <a href="#">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <h3>New Login</h3>
+                </a> -->
+                <a href="/index.html">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Thoát</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- <h1 class="mtitle">Trang quản lí người dùng</h1> -->
+            <div class="recent-orders">
+                <h2>Thêm người dùng mới</h2>
+                <form id="addUserForm">
+                    <label for="username">Tên đăng nhập:</label><br>
+                    <input type="text" id="username" name="username" class="inputdata"><br>
+                    <label for="password">Mật khẩu:</label><br>
+                    <input type="password" id="password" name="password" class="inputdata"><br>
+                    <label for="phonenumber">Số điện thoại:</label><br>
+                    <input type="text" id="phonenumber" name="phonenumber" class="inputdata"><br>
+                    <label for="money">Tiền tài khoản:</label><br>
+                    <input type="text" id="money" name="money" class="inputdata"><br>
+                    <label for="role">Loại tài khoản:</label><br>
+                    <input type="text" id="role" name="role" value="user" readonly class="inputdata"><br>
+                    <label for="status">Trạng thái tài khoản:</label><br>
+                    <select id="status" name="status" class="inputdata">
+                        <option value="Hoạt động">Hoạt động</option>
+                        <option value="Bị cấm">Bị cấm</option>
+                        <option value="Cảnh báo">Cảnh báo</option>
+                    </select><br><br>
+                    <button type="submit"  class="btnthemuser">Thêm</button>
+                </form>
+            </div>
+            <!-- Recent Orders Table -->
+            <div class="recent-orders">
+                <h2>Danh sách tài khoản người dùng</h2>
+                <table class="tablenguoidung">
+                    <thead>
+                        <tr>
+                            <th>Tên đăng nhập</th>
+                            <th>Mật khẩu</th>
+                            <th>Số điện thoại</th>
+                            <th>Tiền tài khoản</th>
+                            <th>Loại tài khoản</th>
+                            <th>Trạng thái tài khoản</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbodynguoidung"></tbody>
+                </table>
+                <a href="#">Trang admin kubet</a>
+            </div>
+            <!-- End of Recent Orders -->
+
+
+
+            <!-- Popup hiển thị thông tin và cho phép chỉnh sửa hoặc xóa -->
+            <div class="popup-overlay" id="popupOverlay"></div>
+            <div class="popup" id="userPopup">
+                <h2>Thông tin người dùng</h2>
+                <form id="editUserForm">
+                    <!-- Các trường thông tin người dùng sẽ được điền tự động từ dữ liệu -->
+                    <label for="editUsername">Tên đăng nhập:</label><br>
+                    <input type="text" id="editUsername" name="username" readonly><br>
+                    <label for="editPassword">Mật khẩu:</label><br>
+                    <input type="password" id="editPassword" name="password"><br>
+                    <label for="editPhonenumber">Số điện thoại:</label><br>
+                    <input type="text" id="editPhonenumber" name="phonenumber"><br>
+                    <label for="editMoney">Tiền tài khoản:</label><br>
+                    <input type="text" id="editMoney" name="money"><br>
+                    <label for="editRole">Loại tài khoản:</label><br>
+                    <input type="text" id="editRole" name="role" readonly><br>
+                    <label for="editStatus">Trạng thái tài khoản:</label><br>
+                    <select id="editStatus" name="status">
+                        <option value="Hoạt động">Hoạt động</option>
+                        <option value="Bị cấm">Bị cấm</option>
+                        <option value="Cảnh báo">Cảnh báo</option>
+                    </select><br><br>
+                    <button type="button" id="saveChanges">Lưu thay đổi</button>
+                    <button type="button" id="deleteUser">Xóa người dùng</button>
+                </form>
+                <button type="button" id="closePopup">Đóng</button>
+            </div>
+
+
+            
+            <div class="popup-overlay" id="popupOverlay"></div>
+            <div class="popup" id="bankPopup">
+                <h2>Thông tin ngân hàng</h2>
+                <form id="editBankForm">
+                    <!-- Các trường thông tin ngân hàng sẽ được điền tự động từ dữ liệu -->
+                    <label for="editTenNganHang">Tên ngân hàng:</label><br>
+                    <input type="text" id="editTenNganHang" name="tenNganHang" readonly><br>
+                    <label for="editSoTaiKhoan">Số tài khoản:</label><br>
+                    <input type="text" id="editSoTaiKhoan" name="soTaiKhoan"><br>
+                    <label for="editChuTaiKhoan">Chủ tài khoản:</label><br>
+                    <input type="text" id="editChuTaiKhoan" name="chuTaiKhoan"><br>
+                    <label for="editNoiDungChuyenKhoan">Nội dung chuyển khoản:</label><br>
+                    <input type="text" id="editNoiDungChuyenKhoan" name="noiDungChuyenKhoan"><br><br>
+                    <label for="editLogo">Logo:</label><br>
+                    <input type="text" id="editLogo" name="logo" readonly><br><br>
+                    <button type="button" id="saveChangesBank">Lưu thay đổi</button>
+                    <button type="button" id="deleteBank">Xóa ngân hàng</button>
+                </form>
+                <button type="button" id="closePopupBank">Đóng</button>
+            </div>
+
+
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hi, <b>admin1234</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/profile-1.jpg">
+                    </div>
+                </div>
+
+            </div>
+            <!-- End of Nav -->
+
+            <div class="user-profile">
+                <div class="logo ">
+                    <img src="/image/banner/b08.jpg" class="banner">
+                    <h2>KUBET WEB</h2>
+                    <p>Sân chơi hàng đầu</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Thông báo</h2>
+                    <span class="material-icons-sharp">
+                        notifications_none
+                    </span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">
+                            volume_up
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Tạo lời nhắc</h3>
+                            <small class="text_muted">
+                                08:00 AM - 12:00 PM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            more_vert
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <span class="material-icons-sharp">
+                            edit
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Gửi thông báo</h3>
+                            <small class="text_muted">
+                                00:00 AM - 4:00 PM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            more_vert
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">
+                            add
+                        </span>
+                        <h3>Thêm mới</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script src="/web/admin/scripts/user.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
+

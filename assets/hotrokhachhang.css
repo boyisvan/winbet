@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contenthotro{
+    width: 100%;
+    padding: 10%;
+    height: 100vh;
+    background-image: url('/image/img_chamsockhachhang/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.item{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 3px 16px 20px rgb(244, 236, 236);
+}
+.item:nth-child(1){
+    margin-top: 200px;
+}
+.icon{
+    width: 15%;
+    font-size: 25px;
+}
+.title{
+    width: 60%;
+}
+.link a{
+    text-decoration: none;
+    font-weight: bold;
+}
+.i1{
+    color: #3458d8;
+}
+.i2{
+    color: #55beeb;
+}
+.i3{
+    color: #2ab0b5;
+}
+.i4{
+    color: #be3a3a; 
+}
+.i5{
+    color: #c4e64a;
+}
+.i5 img{
+    width: 50px;
+    height: 50px;
+    margin-left: -10px;
+}
+.i6{
+    color: #a529b8;
+}
+
+@media screen and (max-width: 1000px) {
+    .contenthotro {
+        background-image: url('/image/img_chamsockhachhang/bgmobile.jpg'); /* Hình nền mới cho màn hình nhỏ */
+    }
+    .item{
+        padding: 10px;
+    }
+    .icon{
+    width: 15%;
+}
+    .title{
+        width: 60%;
+    }
+    .item:nth-child(1){
+    margin-top: 250px;
+}
+}

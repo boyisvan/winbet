@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nạp tiền</title>
+    <link rel="stylesheet" href="/web/user/styles.css">
+    <link rel="stylesheet" href="/assets/styleprofile.css">
+    <link rel="stylesheet" href="/assets/styleuudai.css">
+    <link rel="stylesheet" href="/assets/naprutttien.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body>
+    
+    <div class="header1">
+        <div class="arrow" >
+            <a href="index.html">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+        </div>
+        <div class="nameprofile">
+            KHU NẠP TIỀN
+         </div>
+        <div class="sodu1" onclick="togglePopup()">
+                <span>0 đ</span>
+                <i class="fa-solid fa-arrow-down i-down"></i>
+            </div>
+    </div>
+
+    
+    <!-- thông tin tiền của người dùng -->
+    <div class="popup" id="moneyPopup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="togglePopup()">&times;</span>
+            <h4>Thông tin tiền</h4>
+            <!-- Thêm thông tin tiền ở các quỹ của bạn vào đây -->
+            <table class="table table-hover thongtintien">
+                <tr>
+                    <td>KU thể thao</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>KU Casino</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Jz Thể thao</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>KU xổ số</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>3D Game</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>AG</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>WM</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <div class="chuyentien">
+                <table class="table table-hover ">
+                    <tr>
+                        <td style="color: rgb(213, 213, 74);">Tổng số điểm</td>
+                        <td  style="color:white">0</td>
+                    </tr>
+                    <tr>
+                        <td style="color: rgb(153, 74, 226);">Quà Tặng miễn phí</td>
+                        <td style=  "color:white">0</td>
+                    </tr>
+                </table>
+                <button class="btn btn-success  cktkg">Chuyển hết về tài khoản chính</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentnaprut">
+        <!-- <header>Ngân hàng nạp tiền vào</header> -->
+        
+        <div class="nganhang">
+            <div class="qrcodenganhang">
+                <img src="/web/admin/images/logonganhang/vietcombank.png" alt="">
+                <img src="/image/qr.png" alt="">
+            </div>
+            <div class="nganhangcontent">
+                <div class="tenNganHang">
+                    <i class="fas fa-university inn inn1"></i><p class="nnbold">VIETCOMBANk</p>
+                </div>
+                <div class="soTaiKhoan">
+                    <i class="fas fa-cog inn"></i>Số Tài Khoản <p class="nnbold">123456789</p>
+                </div>
+                <div class="chuTaiKhoan">
+                    <i class="fas fa-user-tie inn"></i>Chủ Tài Khoản <p class="nnbold">NGUYEN VAN A</p>
+                </div>
+                <div class="noiDung">
+                    <i class="fas fa-book inn"></i> Nội dung chuyển khoản : <i class="ndck">123</i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="datat">
+            <div class="r1 r">
+                <div class="namer">Số điểm nạp :</div>
+                <div class="enterdata">
+                    <input type="number" class="form-control " id="tienrut" placeholder="100 ~ 5.000.000.000 VND">
+                </div>
+            </div>
+            <div class="keyboard1">
+                <button class="number-btn">1</button>
+                <button class="number-btn">2</button>
+                <button class="number-btn">3</button>
+                <button class="number-btn">4</button>
+                <button class="number-btn">5</button>
+                <button id="clear-btn">X</button>
+                <button class="number-btn">6</button>
+                <button class="number-btn">7</button>
+                <button class="number-btn">8</button>
+                <button class="number-btn">9</button>
+                <button class="number-btn">0</button>
+            </div>
+            <!-- <div class="r2 r">
+                <div class="namer">Thực tế</div>
+                <div class="enterdata datathucte" style="color:red">
+                    
+                </div>
+            </div> -->
+            <!-- <div class="r3 r">
+                <div class="namer">Mật khẩu bảo mật</div>
+                <div class="enterdata">
+                    <input type="text" class="form-control "  placeholder="nhập mật khẩu">
+                </div>
+            </div> -->
+            <!-- <div class="r3 r">
+                <div class="namer"></div>
+                <div class="enterdata">
+                    <a href="">Quên mật khẩu?</a>
+                </div>
+            </div> -->
+            <div class="r4 r">
+                <button class="btn btn-primary   ">Xác nhận</button>
+            </div>
+        </div>
+        
+        <div class="notiruttien">
+            <div class="headn">
+                ⚠️ Chú ý
+            </div>
+            <div class="contentnoti">
+                <p>1. Hạn mức nạp tiền một ngày là 5,000,000,000 VND</p>
+                <p>2. Điều kiện nạp tiền: Số điểm nạp phải được gửi đến đúng tài khoản và phải được xác nhận chính xác.</p>
+                <p>3. Muốn hủy lệnh rút tiền, hãy đến mục Lịch sử giao dịch-> Hủy yêu cầu.</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <!-------------------------------------------------------- phần điều hướng ------------------------>
+    <div class="footer">
+        <div class="uudai  ft">
+            <a class="ct" href="uudai.html">
+                <img src="/image/image_game/icon_footer_gift.png" alt="">
+                <p>Ưu đãi</p>
+            </a>
+        </div>
+        <div class="hotro ft" >
+            <a class="ct ctht" href="hotro.html">
+                <img src="/image/image_game/icon_footer_service.png" alt="">
+                <p>Hỗ trợ</p>
+            </a>
+        </div>
+        <div class="napruttien ft" id="showOptionsButton">
+            <a class="ct">
+                <img src="/image/image_game/icon_footer_DW.png  " alt="">
+                <p>Nạp rút tiền</p>
+            </a>
+        </div>
+        <div class="giaodich ft" >
+            <a class="ct" href="giaodich.html">
+                <img src="/image/image_game/icon_footer_tradeRec.png" alt="">
+                <p>Giao dịch</p>
+            </a>
+        </div>
+        <div class="toi ft">
+            <a class="ct" href="profile.html">
+                <img src="/image/image_game/icon_footer_member.png" alt="">
+                <p>Tôi</p>
+            </a>
+        </div>
+    </div>
+
+   <!-- phần nạp rút tiền  -->
+
+    <div id="optionsDiv" class="optionsDiv">
+        <!-- Nội dung của div này, chẳng hạn các tùy chọn người dùng có thể chọn -->
+        <a href="naptien.html" class="aob">
+            <button class="btn btn-success ob">
+                <img src="/image/iconnap.png" alt="">
+                <span>NẠP TIỀN</span>
+            </button>
+        </a>
+        <!-- <a href="chuyenquy.html" class="aob">
+            <button class="btn btn-primary ob"><span>Chuyển quỹ</span></button>
+        </a> -->
+        <a href="ruttien.html" class="aob">
+            <button class="btn btn-warning ob">
+                <img src="/image/iconrut.png" alt="">
+                <span>RÚT TIỀN</span>
+            </button>
+        </a>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<script src="/assets/scripts.js"></script>
+<script >
+    document.addEventListener("DOMContentLoaded", function () {
+  var moneyBtn = document.querySelector(".sodu1");
+  var popup = document.querySelector(".popup");
+  var closeBtn = document.querySelector(".close-btn");
+
+  moneyBtn.addEventListener("click", function () {
+    popup.classList.toggle("active");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    popup.classList.remove("active");
+  });
+});
+</script>
+
+
+
+ <script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementsByClassName("tablinks")[0].click(); // Open the first tab by default
+</script>
+
+
+
